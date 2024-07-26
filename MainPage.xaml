@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:P13E31925597.ViewModels"
+             x:Class="P13E31925597.MainPage">
+    <ContentPage.BindingContext>
+        <viewmodel:MainPageViewModel/>
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Label Text="Distancia entre 2 puntos" HorizontalOptions="Center" FontSize="26" />
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Entry Placeholder="Coordenada x del p1" WidthRequest="300" Text="{Binding Punto1x}" />
+                <Entry Placeholder="Coordenada y del p1" WidthRequest="300" Text="{Binding Punto1y}" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Entry Placeholder="Coordenada x del p2" WidthRequest="300" Text="{Binding Punto2x}" />
+                <Entry Placeholder="Coordenada y del p2" WidthRequest="300" Text="{Binding Punto2y}" />
+            </HorizontalStackLayout>
+            <Button Text="Calcular distancia" WidthRequest="550" Command="{Binding CalcularDistanciaCommand}" />
+            <Label Text="{Binding Distancia}" FontSize="26" HorizontalOptions="Center"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
